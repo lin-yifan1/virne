@@ -71,7 +71,7 @@ class Attribute(object):
             return net.links[id][self.name]
 
     def check(self, *args, **kwargs):
-        return True
+        return True, 0
 
     def size(self, network):
         size = network.num_nodes if self.owner == 'node' else network.num_links

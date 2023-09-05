@@ -54,7 +54,7 @@ class Solver:
         self.matching_mathod = kwargs.get('matching_mathod', 'greedy')
         # link mapping
         self.shortest_method = kwargs.get('shortest_method', 'k_shortest')
-        self.k_shortest = kwargs.get('k_shortest', 10)
+        self.k_shortest = kwargs.get('k_shortest', 20)
         # action
         self.allow_rejection = kwargs.get('allow_rejection', False)
         self.allow_revocable = kwargs.get('allow_revocable', False)

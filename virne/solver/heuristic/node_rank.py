@@ -38,7 +38,6 @@ class NodeRankSolver(Solver):
     
     def solve(self, instance: dict) -> Solution:
         v_net, p_net  = instance['v_net'], instance['p_net']
-
         solution = Solution(v_net)
         node_mapping_result = self.node_mapping(v_net, p_net, solution)
         if node_mapping_result:
@@ -80,7 +79,6 @@ class NodeRankSolver(Solver):
             v_net_edges_rank_dict = self.link_rank(v_net)
             v_net_edges_sort = sorted(v_net_edges_rank_dict.items(), reverse=True, key=lambda x: x[1])
             sorted_v_links = [edge_value[0] for edge_value in v_net_edges_sort]
-
         link_mapping_result = self.controller.link_mapping(v_net, p_net, solution=solution, 
                                                         sorted_v_links=sorted_v_links, 
                                                         shortest_method=self.shortest_method,

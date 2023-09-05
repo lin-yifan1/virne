@@ -239,7 +239,17 @@ class Controller:
             if not result:
                 final_result = False
             path_satisfiability_info[p_link] = info
+
         # TODO: Add path constraint
+
+        v_link_data = v_net.links[v_link]
+        for attr in self.all_link_attrs:
+            if attr.type == 'latency':
+                p_ltc = sum(p_net.links[link][attr.name] for link in p_links)
+                v_ltc = v_link_data[attr.name]
+                if v_ltc < p_ltc:
+                    final_result = False
+
         return final_result, path_satisfiability_info
 
     def update_resource(

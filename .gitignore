@@ -6,7 +6,6 @@ virne.egg-info
 dist
 
 # save
-save
 running_log
 old_save
 pretrained

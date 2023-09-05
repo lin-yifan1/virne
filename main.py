@@ -17,9 +17,9 @@ def run(config):
 
 if __name__ == '__main__':
     config = Config(
-        solver_name='nrm_rank',
-        # p_net_setting_path='customized_p_net_setting_file_path',
-        # v_sim_setting_path='customized_v_sim_setting_file_path',
+        solver_name='rw_rank',
+        p_net_setting_path='./mysettings/p_net_setting.yaml',
+        v_sim_setting_path='./mysettings/v_sim_setting.yaml',
     )
-    Generator.generate_dataset(config, p_net=False, v_nets=False, save=False)
+    Generator.generate_dataset(config, p_net=True, v_nets=True, save=True)
     run(config)
